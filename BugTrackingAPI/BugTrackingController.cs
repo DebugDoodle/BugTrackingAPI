@@ -9,7 +9,8 @@ namespace BugTrackingController
     [Route("api")]
     [ApiController]
     public class BugTrackingController : ControllerBase
-    {
+    {    public static string CONNECTION_STRING = "Server=62.169.26.82;Port=3306;Database=BugTracking;User Id=root;Password=Prajnan@1235;";
+
         [HttpGet, Route("Test")]
         public ActionResult Get()
         {
@@ -22,7 +23,7 @@ namespace BugTrackingController
             try
             {
                 string sectionResponse = string.Empty;
-                string connectionString = "Server=localhost;Port=3306;Database=BugTracking;User Id=root;Password=Praj@123;";
+                string connectionString = CONNECTION_STRING;
                 using (IDbConnection dbConnection = new MySqlConnector.MySqlConnection(connectionString)) 
                 {
                     dbConnection.Open();
@@ -43,7 +44,7 @@ namespace BugTrackingController
             try
             {
                 string hierarchyResponse = string.Empty;
-                string connectionString = "Server=localhost;Port=3306;Database=BugTracking;User Id=root;Password=Praj@123;";
+                string connectionString = CONNECTION_STRING;
                 using (IDbConnection dbConnection = new MySqlConnector.MySqlConnection(connectionString)) 
                 {
                     dbConnection.Open();
@@ -59,13 +60,13 @@ namespace BugTrackingController
 
         }
         [HttpPost, Route("GetDashboard")]
-        public ActionResult GetDashBoard(Request req)
+        public ActionResult GetDashBoard(BugRequest req)
         {
             DashBoard dashBoard = new DashBoard();
             try
             {
                 string dashboardResponse = string.Empty;
-                string connectionString = "Server=localhost;Port=3306;Database=BugTracking;User Id=root;Password=Praj@123;";
+                string connectionString = CONNECTION_STRING;
                 using (IDbConnection dbConnection = new MySqlConnector.MySqlConnection(connectionString)) 
                 {
                     dbConnection.Open();
@@ -88,13 +89,13 @@ namespace BugTrackingController
             }
         }
         [HttpPost, Route("BugData")]
-        public ActionResult BugData(Request req)
+        public ActionResult BugData(BugRequest req)
         {
             DashBoard dashBoard = new DashBoard();
             try
             {
                 string dashboardResponse = string.Empty;
-                string connectionString = "Server=localhost;Port=3306;Database=BugTracking;User Id=root;Password=Praj@123;";
+                string connectionString = CONNECTION_STRING;
                 using (IDbConnection dbConnection = new MySqlConnector.MySqlConnection(connectionString)) 
                 {
                     dbConnection.Open();
@@ -119,7 +120,7 @@ namespace BugTrackingController
             try
             {
                 string sectionResponse = string.Empty;
-                string connectionString = "Server=localhost;Port=3306;Database=BugTracking;User Id=root;Password=Praj@123;";
+                string connectionString = CONNECTION_STRING;
                 using (IDbConnection dbConnection = new MySqlConnector.MySqlConnection(connectionString)) 
                 {
                     dbConnection.Open();
@@ -144,12 +145,12 @@ namespace BugTrackingController
         }
       
         [HttpPost, Route("CreateTicket")]
-        public ActionResult CreateTicket(Request req)
+        public ActionResult CreateTicket(BugRequest req)
 {
     try
     {
         string sectionResponse = string.Empty;
-        string connectionString = "Server=localhost;Port=3306;Database=BugTracking;User Id=root;Password=Praj@123;";
+        string connectionString = CONNECTION_STRING;
         using (IDbConnection dbConnection = new MySqlConnector.MySqlConnection(connectionString)) 
         {
             dbConnection.Open();
@@ -177,7 +178,7 @@ namespace BugTrackingController
     }
 }
 
-        public class Request 
+        public class BugRequest 
         {
             public string? EmployeeId{get;set;}
             public string? Module { get; set; }
