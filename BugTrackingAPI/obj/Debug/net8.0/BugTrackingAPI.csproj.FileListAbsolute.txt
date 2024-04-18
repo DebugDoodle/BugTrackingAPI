@@ -40,3 +40,4 @@
 /Users/srujan/Documents/BugTrackingAPI/BugTrackingAPI/bin/Debug/net8.0/runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll
 /Users/srujan/Documents/BugTrackingAPI/BugTrackingAPI/bin/Debug/net8.0/Npgsql.dll
 /Users/srujan/Documents/BugTrackingAPI/BugTrackingAPI/bin/Debug/net8.0/MySqlConnector.dll
+/Users/srujan/Documents/BugTrackingAPI/BugTrackingAPI/obj/Debug/net8.0/BugTrackingAPI.sourcelink.json
